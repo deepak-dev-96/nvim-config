@@ -30,7 +30,7 @@ local function set_lsp_completion_capabilities()
   local ok, nvim_cmp_lsp = pcall(require, 'cmp_nvim_lsp')
 
   if ok then
-    M.capabilities = nvim_cmp_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    M.capabilities = nvim_cmp_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
   else
     M.capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
     M.capabilities.textDocument.completion.completionItem.preselectSupport = true
